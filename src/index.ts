@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 import projectRoutes from "./routes/projectRoutes.js"
 import experienceRoutes from "./routes/experienceRoutes.js"
 import skillRoutes from "./routes/skillRoutes.js"
+import cors from "cors"
 
 const app = express()
 const PORT = process.env.PORT
@@ -11,6 +12,9 @@ const MONGODB_URL = process.env.MONGODB_URL
 if (!MONGODB_URL) throw new Error("MONGODB_URL is not defined in .env")
 if (!PORT) throw new Error("PORT is not defined in .env")
 
+app.use(cors({
+  origin: "http://localhost:5173"
+}))
 app.use(express.json())
 
 app.use("/projects", projectRoutes)
