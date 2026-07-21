@@ -4,7 +4,7 @@ type Experience = {
   _id: Types.ObjectId
   role: string
   company: string
-  description: string
+  description: string[]
   startDate: Date
   endDate?: Date
 }
@@ -12,7 +12,7 @@ type Experience = {
 const ExperienceSchema = new Schema({
   role: { type: String, required: true},
   company: { type: String, required: true},
-  description: { type: String, required: true},
+  description: [{ type: String, required: true}],
   startDate: { type: Date, required: true},
   endDate: { type: Date}
 })
