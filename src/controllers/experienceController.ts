@@ -3,7 +3,7 @@ import { Experience } from "../models/Experience.js";
 
 export const getAllExperiences = async (req: Request, res: Response) => {
   try {
-    const experience = await Experience.find()
+    const experience = await Experience.find().sort({ startDate: -1 })
 
     res.json(experience)
   } catch (error) {
