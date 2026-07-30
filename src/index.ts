@@ -13,7 +13,10 @@ if (!MONGODB_URL) throw new Error("MONGODB_URL is not defined in .env")
 if (!PORT) throw new Error("PORT is not defined in .env")
 
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: [
+    "http://localhost:5173",
+    "https://mag1939.vercel.app/"
+  ]
 }))
 app.use(express.json())
 
