@@ -15,7 +15,7 @@ if (!PORT) throw new Error("PORT is not defined in .env")
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://mag1939.vercel.app/"
+    "https://mag1939.vercel.app"
   ]
 }))
 app.use(express.json())
